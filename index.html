@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERFOX | Shop Smart · Live Better</title>
+    <meta name="description"
+        content="ZERFOX - Premium luxury watches. Shop smart, live better. Explore our exclusive timepiece collections with free nationwide shipping.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --black: #000000;
+            --black-deep: #0a0a0a;
+            --black-mid: #111111;
+            --black-light: #1a1a1a;
+            --gold: #C9A227;
+            --gold-light: #E8C84A;
+            --gold-dark: #A8821A;
+            --white: #ffffff;
+            --off-white: #f8f6f0;
+            --gray-mid: #888888;
+            --gray-dark: #444444;
+            --border: rgba(201, 162, 39, 0.2);
+            --shadow-gold: 0 0 30px rgba(201, 162, 39, 0.15);
+            --font-main: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --transition: 0.3s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--white);
+            color: var(--black-mid);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .top-bar {
+            background: linear-gradient(90deg, #0a0a0a 0%, #111111 40%, #0a0a0a 100%);
+            color: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 9px 0;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+        }
+
+        .marquee-content {
+            display: inline-flex;
+            gap: 60px;
+            animation: scrollText 22s linear infinite;
+        }
+
+        .top-bar:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        .marquee-content span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ddd;
+        }
+
+        .marquee-content i {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .marquee-content .hl {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 22px;
+            cursor: pointer;
+            transition: color var(--transition);
+        }
+
+        .menu-toggle:hover {
+            color: var(--gold);
+        }
+
+        .logo-container {
+            width: 180px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .logo-text-name {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .icon-box {
+            position: relative;
+            color: #ccc;
+            font-size: 17px;
+            cursor: pointer;
+            transition: color var(--transition);
+        }
+
+        .icon-box:hover {
+            color: var(--gold);
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--black);
+            font-size: 9px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ===== HERO SLIDER ===== */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            overflow: hidden;
+            background-color: var(--black);
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.65s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 6s ease;
+        }
+
+        .slide.active img {
+            transform: scale(1.04);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .slide-text {
+            color: var(--white);
+            max-width: 520px;
+        }
+
+        .slide-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            margin-bottom: 18px;
+            border-radius: 2px;
+        }
+
+        .slide-title {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .slide-title span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .slide-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.4px;
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .slide-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 14px 32px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+        }
+
+        .slide-cta:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            color: var(--white);
+            font-size: 15px;
+            cursor: pointer;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .arrow:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .prev-arrow {
+            left: 20px;
+        }
+
+        .next-arrow {
+            right: 20px;
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 28px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .dot.active {
+            background-color: var(--gold);
+            width: 44px;
+        }
+
+        /* ===== FEATURES STRIP ===== */
+        .features-strip {
+            background-color: var(--black-mid);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 28px;
+            border-right: 1px solid var(--border);
+            transition: background var(--transition);
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-item:hover {
+            background: rgba(201, 162, 39, 0.05);
+        }
+
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: var(--gold);
+            font-size: 16px;
+        }
+
+        .feature-text h5 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .feature-text p {
+            font-size: 11px;
+            color: var(--gray-mid);
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            color: var(--black-mid);
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin: 18px auto 0;
+        }
+
+        /* ===== MOST POPULAR 3D SLIDER ===== */
+        .most-popular {
+            background-color: var(--white);
+            padding: 90px 0 70px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: height 0.4s ease-in-out;
+        }
+
+        .carousel-item {
+            position: absolute;
+            transition: all 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 260px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: contain;
+            transition: all 0.6s ease-in-out;
+            filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2));
+        }
+
+        .item-details {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+            margin-top: 22px;
+        }
+
+        .watch-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--black-mid);
+            margin-bottom: 8px;
+        }
+
+        .watch-price {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .btn-buy {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            padding: 13px 36px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+            transition: all 0.3s ease;
+            font-family: var(--font-main);
+        }
+
+        .btn-buy:hover {
+            background: var(--black);
+            color: var(--gold);
+        }
+
+        .carousel-item.active {
+            z-index: 10;
+            transform: translateX(0) scale(1.15);
+        }
+
+        .carousel-item.active img {
+            filter: drop-shadow(0px 15px 30px rgba(201, 162, 39, 0.3));
+        }
+
+        .carousel-item.active .item-details {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .carousel-item.prev {
+            z-index: 5;
+            transform: translateX(-230px) scale(0.8);
+            opacity: 0.45;
+        }
+
+        .carousel-item.prev img {
+            filter: blur(5px) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        .carousel-item.next {
+            z-index: 5;
+            transform: translateX(230px) scale(0.8);
+            opacity: 0.45;
+        }
+
+        .carousel-item.next img {
+            filter: blur(5px) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        .carousel-item.hidden {
+            z-index: 1;
+            transform: translateX(0) scale(0.4);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .carousel-controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .ctrl-btn {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ctrl-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: scale(1.08);
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .boxed-catalog {
+            padding: 80px 5%;
+            background-color: var(--off-white);
+        }
+
+        .boxed-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .boxed-card {
+            border: 1px solid #e8e4da;
+            border-radius: 8px;
+            padding: 16px;
+            background-color: var(--white);
+            position: relative;
+            transition: all 0.35s ease;
+            overflow: hidden;
+        }
+
+        .boxed-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .boxed-card:hover {
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1), var(--shadow-gold);
+            transform: translateY(-4px);
+        }
+
+        .boxed-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+        }
+
+        .boxed-card:hover .card-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-action-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--gray-dark);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-action-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .card-img-box {
+            background: linear-gradient(145deg, #f9f7f2, #f0ede5);
+            border-radius: 6px;
+            padding: 22px;
+            margin-bottom: 16px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card-img-box img {
+            max-width: 100%;
+            height: 210px;
+            object-fit: contain;
+            transition: transform 0.45s ease;
+        }
+
+        .boxed-card:hover .card-img-box img {
+            transform: scale(1.06);
+        }
+
+        .card-details {
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black-mid);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-rating {
+            color: var(--gold);
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-rating .review-count {
+            color: #999;
+            margin-left: 4px;
+        }
+
+        .card-price {
+            margin-bottom: 16px;
+        }
+
+        .old-price {
+            color: #bbb;
+            text-decoration: line-through;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .new-price {
+            color: var(--gold-dark);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .btn-outline-cart {
+            width: 100%;
+            background-color: transparent;
+            color: var(--black-mid);
+            border: 1.5px solid var(--black-mid);
+            padding: 12px 0;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            font-family: var(--font-main);
+        }
+
+        .btn-outline-cart:hover {
+            background-color: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        /* ===== ABOUT ===== */
+        .about-section {
+            padding: 100px 5%;
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text .sub-heading {
+            color: var(--gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .about-text .main-heading {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            color: var(--black-mid);
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .about-text .main-heading span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin: 32px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .btn-gold-solid {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            padding: 14px 34px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+        }
+
+        .btn-gold-solid:hover {
+            background: var(--black-mid);
+            color: var(--gold);
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: -18px 18px 0px 0px var(--gold);
+            display: block;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            padding: 90px 5%;
+            background: linear-gradient(135deg, #0d0d0d 0%, #111 50%, #0a0a0a 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .contact-header h2 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            letter-spacing: 1px;
+        }
+
+        .contact-header p {
+            color: #888;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        .title-underline {
+            width: 55px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin: 18px auto 0;
+        }
+
+        .contact-container {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 55px;
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-box i {
+            color: var(--gold);
+            font-size: 22px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .info-box h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            background-color: #1e1e1e;
+            border: 1px solid var(--border);
+            color: var(--gold);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .contact-form-box {
+            flex: 1.3;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 45px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .input-group input {
+            flex: 1;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            color: var(--white);
+            padding: 14px 16px;
+            font-family: var(--font-main);
+            font-size: 13px;
+            outline: none;
+            border-radius: 4px;
+            transition: border 0.3s ease;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #555;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--gold);
+            background-color: rgba(201, 162, 39, 0.05);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            padding: 16px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-family: var(--font-main);
+        }
+
+        .btn-submit:hover {
+            background: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-section {
+            background-color: var(--black-deep);
+            color: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-top {
+            border-bottom: 1px solid var(--border);
+            padding: 65px 5%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(201, 162, 39, 0.04) 0%, transparent 100%);
+        }
+
+        .newsletter-box {
+            max-width: 580px;
+            width: 100%;
+        }
+
+        .newsletter-box h3 {
+            font-family: var(--font-serif);
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-box p {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 28px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            width: 100%;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-right: none;
+            color: var(--white);
+            font-family: var(--font-main);
+            outline: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--gold);
+        }
+
+        .newsletter-form button {
+            padding: 0 32px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0 4px 4px 0;
+            white-space: nowrap;
+            font-family: var(--font-main);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--white);
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding: 65px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-col p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-top: 16px;
+            max-width: 280px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            color: var(--gold);
+            font-size: 30px;
+            letter-spacing: 3px;
+        }
+
+        .footer-tagline {
+            font-size: 10px;
+            color: var(--gray-mid);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            color: #888;
+            font-size: 13px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-col ul li a::before {
+            content: '›';
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 14px;
+            font-size: 26px;
+            color: #555;
+        }
+
+        .payment-icons i {
+            transition: color 0.3s ease;
+        }
+
+        .payment-icons i:hover {
+            color: var(--white);
+        }
+
+        /* ===== WHATSAPP ===== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.55);
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 260px;
+                height: 100vh;
+                background-color: var(--black);
+                padding-top: 85px;
+                transition: left 0.4s ease-in-out;
+                z-index: 99;
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.7);
+                gap: 0;
+                border-right: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 18px 30px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links li a {
+                font-size: 13px;
+                color: var(--white);
+            }
+
+            .menu-toggle {
+                display: block;
+                flex: 1;
+                z-index: 101;
+            }
+
+            .logo-container {
+                flex: 2;
+                justify-content: center;
+            }
+
+            .nav-icons {
+                flex: 1;
+                justify-content: flex-end;
+                gap: 14px;
+            }
+
+            .features-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .about-container,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .about-image {
+                margin-top: 30px;
+            }
+
+            .input-group {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .slide-title {
+                font-size: 36px;
+            }
+
+            .slide-subtitle {
+                font-size: 13px;
+            }
+
+            .slider-container {
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+
+            .arrow {
+                font-size: 14px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .boxed-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .boxed-card {
+                padding: 10px;
+            }
+
+            .card-img-box {
+                padding: 12px;
+            }
+
+            .card-img-box img {
+                height: 150px;
+            }
+
+            .card-title {
+                font-size: 12px;
+            }
+
+            .new-price {
+                font-size: 14px;
+            }
+
+            .features-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-section {
+                padding: 60px 15px;
+            }
+
+            .about-text .main-heading {
+                font-size: 32px;
+            }
+
+            .about-stats {
+                gap: 25px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .contact-section {
+                padding: 60px 15px;
+            }
+
+            .contact-form-box {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input {
+                border-right: 1px solid rgba(201, 162, 39, 0.3);
+                border-radius: 4px;
+            }
+
+            .newsletter-form button {
+                padding: 15px;
+                width: 100%;
+                border-radius: 4px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .brand-col p {
+                margin: 15px auto;
+            }
+
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-col ul li a {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .slide-title {
+                font-size: 26px;
+            }
+
+            .slide-subtitle {
+                display: none;
+            }
+
+            .slide-cta {
+                padding: 11px 22px;
+                font-size: 10px;
+            }
+
+            .carousel-item.prev {
+                transform: translateX(-120px) scale(0.7);
+            }
+
+            .carousel-item.next {
+                transform: translateX(120px) scale(0.7);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="top-bar">
+        <div class="marquee-content">
+            <span><i class="fas fa-shipping-fast"></i> FREE SHIPPING ON ALL ORDERS</span>
+            <span><i class="fas fa-gem"></i> <span class="hl">ZERFOX</span> — SHOP SMART · LIVE BETTER</span>
+            <span><i class="fas fa-shield-alt"></i> 2 YEAR WARRANTY ON ALL WATCHES</span>
+            <span><i class="fas fa-tag"></i> USE CODE <span class="hl">ZERFOX10</span> FOR 10% OFF</span>
+            <span><i class="fas fa-phone-alt"></i> CALL: +92 300 000 0000</span>
+            <span><i class="fas fa-undo-alt"></i> 30-DAY EASY RETURNS</span>
+            <!-- Duplicate for infinite loop -->
+            <span><i class="fas fa-shipping-fast"></i> FREE SHIPPING ON ALL ORDERS</span>
+            <span><i class="fas fa-gem"></i> <span class="hl">ZERFOX</span> — SHOP SMART · LIVE BETTER</span>
+            <span><i class="fas fa-shield-alt"></i> 2 YEAR WARRANTY ON ALL WATCHES</span>
+            <span><i class="fas fa-tag"></i> USE CODE <span class="hl">ZERFOX10</span> FOR 10% OFF</span>
+            <span><i class="fas fa-phone-alt"></i> CALL: +92 300 000 0000</span>
+            <span><i class="fas fa-undo-alt"></i> 30-DAY EASY RETURNS</span>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="media/logo.webp" alt="ZERFOX">
+            </a>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">NEW ARRIVALS</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <div class="icon-box"><i class="fas fa-search"></i></div>
+            <div class="icon-box">
+                <i class="far fa-heart"></i>
+                <span class="badge">0</span>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="slider-container">
+        <button class="arrow prev-arrow" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow next-arrow" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slides" id="slideWrapper">
+            <div class="slide active">
+                <img src="media/banner_1.webp" alt="ZERFOX Premium Collection" fetchpriority="high">
+            </div>
+            <div class="slide">
+                <img src="media/banner_2.webp" alt="ZERFOX Gold Collection" fetchpriority="high">
+            </div>
+            <div class="slide">
+                <img src="media/banner_3.webp" alt="ZERFOX Lifestyle" fetchpriority="high">
+
+            </div>
+        </div>
+
+        <div class="dots-container">
+            <div class="dot active" onclick="currentSlide(0)"></div>
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+        </div>
+    </section>
+
+
+    <!-- ===== MOST POPULAR ===== -->
+    <section class="most-popular">
+        <div class="section-header">
+            <span class="section-eyebrow">Customer Favourites</span>
+            <h2 class="section-title">Most <span>Popular</span></h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="carousel" id="carouselContainer">
+            <div class="carousel-item">
+                <img src="media/mp_product_1.webp" alt="Phantom Skeleton Noir" fetchpriority="high">
+                <div class="item-details">
+                    <h3 class="watch-title">Phantom Skeleton Noir</h3>
+                    <p class="watch-price">Rs. 55,000</p>
+                    <button class="btn-buy">BUY NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="media/mp_product_2.webp" alt="Royal Gold Elite" fetchpriority="high">
+                <div class="item-details">
+                    <h3 class="watch-title">Royal Gold Elite</h3>
+                    <p class="watch-price">Rs. 65,000</p>
+                    <button class="btn-buy">BUY NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="media/mp_product_3.webp" alt="Classic Silver Series" fetchpriority="high">
+                <div class="item-details">
+                    <h3 class="watch-title">Classic Silver Minimalist Series</h3>
+                    <p class="watch-price">Rs. 45,000</p>
+                    <button class="btn-buy">BUY NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="media/mp_product_4.webp" alt="Onyx Black Pro" fetchpriority="high">
+                <div class="item-details">
+                    <h3 class="watch-title">Onyx Black Pro</h3>
+                    <p class="watch-price">Rs. 50,000</p>
+                    <button class="btn-buy">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="ctrl-btn" onclick="moveCarousel(-1)"><i class="fas fa-arrow-left"></i></button>
+            <button class="ctrl-btn" onclick="moveCarousel(1)"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- ===== COLLECTIONS GRID ===== -->
+    <section class="boxed-catalog">
+        <div class="section-header">
+            <span class="section-eyebrow">Timepiece Selection</span>
+            <h2 class="section-title">Our <span>Collections</span></h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="boxed-grid">
+            <div class="boxed-card">
+                <div class="card-badge">-15%</div>
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_1.webp" alt="Watch 1"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Wokai Classic Gold & Black</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span
+                            class="review-count">(24)</span></div>
+                    <div class="card-price"><span class="old-price">Rs. 18,000</span><span class="new-price">Rs.
+                            15,300</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="boxed-card">
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_2.webp" alt="Watch 2"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Curren GMT Chronometer</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span
+                            class="review-count">(41)</span></div>
+                    <div class="card-price"><span class="new-price">Rs. 12,500</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="boxed-card">
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_3.webp" alt="Watch 3"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Mstianq Emerald Silver</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span
+                            class="review-count">(12)</span></div>
+                    <div class="card-price"><span class="new-price">Rs. 22,000</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="boxed-card">
+                <div class="card-badge">NEW</div>
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_4.webp" alt="Watch 4"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Phantom Skeleton Elite</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span
+                            class="review-count">(89)</span></div>
+                    <div class="card-price"><span class="new-price">Rs. 35,000</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="boxed-card">
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_5.webp" alt="Watch 5"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Titanium Series Pro</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span
+                            class="review-count">(156)</span></div>
+                    <div class="card-price"><span class="old-price">Rs. 90,000</span><span class="new-price">Rs.
+                            80,000</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="boxed-card">
+                <div class="card-actions">
+                    <button class="card-action-btn"><i class="far fa-heart"></i></button>
+                    <button class="card-action-btn"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="card-img-box"><img src="media/mp_product_6.webp" alt="Watch 6"></div>
+                <div class="card-details">
+                    <h3 class="card-title">Vintage Leather Edition</h3>
+                    <div class="card-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span
+                            class="review-count">(34)</span></div>
+                    <div class="card-price"><span class="new-price">Rs. 45,000</span></div>
+                    <button class="btn-outline-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h4 class="sub-heading">Our Story</h4>
+                <h2 class="main-heading">Crafting Timeless <span>Precision</span></h2>
+                <p>Welcome to ZERFOX — where every timepiece tells a story of ambition and excellence. We believe that a
+                    great watch is more than an accessory; it's a declaration of who you are and where you're headed.
+                </p>
+                <p>Our curated collection combines cutting-edge design with traditional craftsmanship, bringing you
+                    luxury watches that stand the test of time — in style, function, and quality.</p>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">Watch Models</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years of Trust</div>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-gold-solid">Discover Our Story &nbsp;<i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="about-image">
+                <img src="media/about.webp" alt="ZERFOX Luxury Watch Lifestyle">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section">
+        <div class="contact-header">
+            <h2>Get In Touch</h2>
+            <div class="title-underline"></div>
+            <p>Our team is ready to assist you with any inquiries.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Visit Our Store</h4>
+                        <p>Shop No. 1, Luxury Market, Lahore, Pakistan</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+92 300 000 0000</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>support@zerfox.pk</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+92 300 000 0000</p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-box">
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your message..." rows="5" required></textarea>
+                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="newsletter-box">
+                <h3>Join The ZERFOX Club</h3>
+                <p>Subscribe for exclusive deals, new arrivals, and members-only offers.</p>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <h2 class="footer-logo">ZERFOX</h2>
+                <p class="footer-tagline">Shop Smart · Live Better</p>
+                <p>Redefining luxury timepieces for the modern generation. Engineered for perfection, designed to
+                    inspire.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Shop Collection</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ZERFOX. All Rights Reserved. | Shop Smart · Live Better</p>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/923000000000" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // --- HERO SLIDER ---
+        let slideIndex = 0;
+        const totalSlides = 3;
+        const slideWrapper = document.getElementById("slideWrapper");
+        const dots = document.getElementsByClassName("dot");
+        const slides = document.querySelectorAll(".slide");
+        let autoSlideInterval;
+
+        function updateSlider() {
+            const pct = slideIndex * -(100 / totalSlides);
+            slideWrapper.style.transform = `translateX(${pct}%)`;
+            slides.forEach((s, i) => s.classList.toggle("active", i === slideIndex));
+            Array.from(dots).forEach((d, i) => d.classList.toggle("active", i === slideIndex));
+        }
+
+        function moveSlide(step) {
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            updateSlider();
+            resetTimer();
+        }
+
+        function currentSlide(i) {
+            slideIndex = i;
+            updateSlider();
+            resetTimer();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                slideIndex = (slideIndex + 1) % totalSlides;
+                updateSlider();
+            }, 4500);
+        }
+
+        function resetTimer() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+
+        // --- MOBILE MENU ---
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.className = 'fas fa-bars';
+            });
+        });
+
+        // --- 3D PRODUCT CAROUSEL ---
+        const sliderItems = document.querySelectorAll('.carousel-item');
+        let currentItem = 0;
+        let carouselTimer;
+
+        function updateCarousel() {
+            sliderItems.forEach((item, index) => {
+                item.classList.remove('active', 'prev', 'next', 'hidden');
+                const total = sliderItems.length;
+                if (index === currentItem) {
+                    item.classList.add('active');
+                    const titleEl = item.querySelector('.watch-title');
+                    const len = titleEl.innerText.length;
+                    titleEl.style.marginBottom = Math.min(Math.max(5 + len * 1.2, 5), 45) + 'px';
+                } else if (index === (currentItem - 1 + total) % total) {
+                    item.classList.add('prev');
+                } else if (index === (currentItem + 1) % total) {
+                    item.classList.add('next');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            setTimeout(() => {
+                const active = document.querySelector('.carousel-item.active');
+                const container = document.getElementById('carouselContainer');
+                if (active && container) {
+                    container.style.height = (active.offsetHeight * 1.15 + 50) + 'px';
+                }
+            }, 50);
+        }
+
+        function moveCarousel(dir) {
+            currentItem = (currentItem + dir + sliderItems.length) % sliderItems.length;
+            updateCarousel();
+            clearInterval(carouselTimer);
+            carouselTimer = setInterval(() => {
+                currentItem = (currentItem + 1) % sliderItems.length;
+                updateCarousel();
+            }, 3500);
+        }
+
+        updateCarousel();
+        carouselTimer = setInterval(() => {
+            currentItem = (currentItem + 1) % sliderItems.length;
+            updateCarousel();
+        }, 3500);
+
+        // --- NAVBAR SCROLL ---
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').style.boxShadow =
+                window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.85)' : '0 2px 20px rgba(0,0,0,0.5)';
+        });
+    </script>
+
+</body>
+
+</html>
